@@ -1,44 +1,70 @@
-header{
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     color: blue;
 }
- 
-.container{
+
+body {
+    width: 100%;
+    height: 100%;
+    --s: 200px;
+    /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+
+    background: repeating-conic-gradient(from 30deg,
+            #0000 0 120deg,
+            var(--c3) 0 180deg) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+        repeating-conic-gradient(from 30deg,
+            var(--c1) 0 60deg,
+            var(--c2) 0 120deg,
+            var(--c3) 0 180deg);
+    background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+.container {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
 }
- 
-.formulario{
+
+.formulario {
     width: 400px;
     padding: 30px;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
+    background-color: white;
 }
-.formulario p{
+
+.formulario p {
     width: 100%;
     font-size: 1.5em;
 }
-.BoxInput{
+
+.BoxInput {
     width: 100%;
     margin: 15px 0;
 }
+
 .BoxInput label,
-.BoxInput span{
+.BoxInput span {
     padding-left: 10px;
     font-size: 1.1em;
     display: block;
     width: 100%;
 }
-.radiobox label{
+
+.radiobox label {
     width: auto;
     display: inline-block;
 }
+
 input[type=text],
 input[type=email],
-textarea{
+textarea {
     width: 100%;
     padding-left: 10px;
     height: 30px;
@@ -47,24 +73,43 @@ textarea{
     border: 1px solid #ccc;
     outline: none;
 }
-input#nao{
+
+input#nao {
     margin-left: 30px;
 }
-textarea{
+
+textarea {
     line-height: 20px;
     padding: 10px;
     height: 90px;
     resize: none;
 }
-input[type=submit]{
+
+input[type=submit] {
     display: block;
-    background-color:#ccc;
-    height: 35px;
-    border: none;
-    outline: 0;
-    cursor: pointer;
-    width: 100px;
-    margin: 0 auto;
     text-align: center;
-    border-radius: 15px;
+    --bg: #e74c3c;
+    --text-color: #fff;
+    position: relative;
+    width: 150px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+}
+
+input[type=submit]:active {
+    top: 4px;
+    box-shadow: #c0392b 0px 3px 2px, #000 0px 3px 5px;
 }
